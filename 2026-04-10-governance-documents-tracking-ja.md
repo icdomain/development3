@@ -57,7 +57,7 @@ Preparedness Framework v2 は「soon have the capability to create meaningful ri
 
 同時にリスクの評価関数からLLMの能力そのものを外し得るという論理構造であり、LLMによって生じたあらゆる災害、損害、社会変化を、LLMの問題ではなく運用の問題としてフレーミングする余地のあるものであった。
 
-Preparedness Framework v2 では、これに加えて CEO が SAG（Safety Advisory Group）の安全勧告を一方的にバイパスできる権限も追加され、第三者機関は元より、社内機関であるSAGすら開発への介入経路が限定されるようになった。
+Preparedness Framework v2 では、これに加えて OpenAI Leadership（CEOまたはその指定代理人）が SAG の参加なしに決定を下せることが制度として明文化された——「SAGには審議を引き延ばす権限はない」と明記される形で。取締役会の安全保安委員会（SSC）が決定を覆せると規定されてはいるが、SAGが独立した専門家集団として機能しうるのに対し、SSCの判断基準はOpenAI Leadershipの利害と構造的に隣接しており、実質的な歯止めとして機能するかは別問題である。
 
 ## 第4期「アンコントローラブル」2025年5月14日 〜 現在
 
