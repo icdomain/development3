@@ -33,10 +33,3 @@
 | 改訂版 | 2025-10-27 | [HTML](./docs/openai-model-spec-2025-10-27.html) | 2026-04-16 | https://model-spec.openai.com/2025-10-27.html |
 | 改訂版 | 2025-12-18 | [HTML](./docs/openai-model-spec-2025-12-18.html) | 2026-04-16 | https://model-spec.openai.com/2025-12-18.html |
 
----
-
-## 関連書籍
-
-- Stuart Russell, *Human Compatible: Artificial Intelligence and the Problem of Control* (Viking, 2019)
-- Nick Bostrom, *Superintelligence: Paths, Dangers, Strategies* (Oxford University Press, 2014)
-- Brian Christian, *The Alignment Problem: Machine Learning and Human Values* (W. W. Norton, 2020)
