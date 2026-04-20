@@ -68,19 +68,17 @@ Agent技術の実装を正当化する一方で、上流の人間への責任の
 - Anthropic RSP v3.0（2026年2月24日）
 - Anthropic RSP v3.1（2026年4月2日）
 
-OpenAI Model Spec の9月12日版では、初版に存在しなかった agent 概念が定義に追加された——「より自律的な展開で使われることがある（sometimes used for more autonomous deployments）」として agent という語が assistant の対概念として導入された。同時に「Scope of Autonomy」セクションが新設され、複数ステップの目標達成の過程で欠けている詳細を自ら埋め、自律的に行動しなければならない場合がある（filling in missing details / must sometimes act autonomously）として、Agentの利用が正当化された。一方で、同じ9月12日版の「No other objectives」セクションには「assistant は applicable instructions に基づく目標のみを追求してよく、その他の目標を採用・最適化・直接追求してはならない（may only pursue goals entailed by applicable instructions ... must not adopt, optimize for, or directly pursue any additional goals）」と明記されている。同一版の中で禁止と正当化が同居する構造となっており、上流の人間への責任の集中や、責任をうやむやにしないための仕組みや法整備については棚上げのままだった。
+OpenAI Model Spec の9月12日版にagentに関する記述が追加される。「より自律的な展開で使われることがある（sometimes used for more autonomous deployments）」として agent という語が登場する。依然として「No other objectives」セクションでは「assistant は applicable instructions に基づく目標のみを追求してよく、その他の目標を採用・最適化・直接追求してはならない（may only pursue goals entailed by applicable instructions ... must not adopt, optimize for, or directly pursue any additional goals）」という姿勢が明記されている一方で、「Scope of Autonomy」セクションでは複数ステップの目標達成の過程で欠けている詳細を自ら埋め、自律的に行動しなければならない場合がある（filling in missing details / must sometimes act autonomously）として、Agentの利用が正当化されており、禁止と正当化が同居するような論理構造となっている。Agentを許容する一方で、Chain of Commandなどで規定された責任境界が曖昧になり、上流の人間が実装に責任を持たず、AIへ責任を転嫁する、あるいは責任をとらないなどの安易に予想される問題への対処については言及がなかった。
 
-更に Scope of Autonomy セクション内には、禁止リストも導入されている——High-risk activities として hacking、deception、resource acquisition、spawning sub-agents、self-modification が、明示的許可なき限り禁止とされた。この禁止リストの存在は OpenAI 自身がこれらを「禁止しなければデフォルトで起こりうる行動」として認識していたことを示している。
+10月27日版では、Tool use 時の AGENTS.md等を経由した暗黙的権限委譲が明文化された。アシスタントは明示的な指示がなくても、ツール出力や周辺文書から「暗黙的に委譲された権限」として自律行動の範囲が拡大された。
 
-10月27日版では、Tool use 時の AGENTS.md等を経由した暗黙的権限委譲が明文化された。アシスタントは明示的な指示がなくても、ツール出力や周辺文書から「暗黙的に委譲された権限」として行動できる範囲が拡大された。
+12月18日版では、16歳 Adam Raine の自殺訴訟（2025年8月提訴、年内に計8件の ChatGPT 関連訴訟）を受けて、U18 Principles が追加された。
 
-12月18日版では、16歳 Adam Raine の自殺訴訟（2025年8月提訴、年内に計8件の ChatGPT 関連訴訟）を受けて、U18 Principles が追加された。既に9月12日版で Agent 自律性の危険性は業界自身が列挙していたにもかかわらず、具体的な未成年者保護の枠組みが整備されたのは、訴訟という外部圧力が加わった後であった。
+RSP v2.2 では、該当モデルに対して ASL-3 safeguards が初めて発動された。
 
-RSP v2.2 では ASL-3 Security Standard の保護対象範囲が見直され、sophisticated insiders と state-compromised insiders が保護対象から除外された——CBRN-3 の threat model では universal jailbreak 経由のアクセスが主たる経路であり、AI R&D-4 では model weight theft に依存しないことを理由として、これらの insider に対する保護は当該 risk level に対して必要ないと判断された。
+RSP v3.0 では、collective action problem（先行して停止した開発者が安全対策の弱い競合に追い越される懸念）を理由に、絶対的停止条項は業界全体への提言（industry-wide recommendations）に格下げされた。
 
-RSP v3.0 では、collective action problem（先行して停止した responsible developer が weaker protections の競合に追い越される懸念）を理由として、v2.0 の「破滅的危害を引き起こしうるモデルは、リスクを許容可能な水準に保つ安全対策を実装しない限り、訓練も展開も行わない」という絶対的停止条項が、Anthropic 単独の commitment から外され、業界全体への提言（industry-wide recommendations）の側に位置付け直された。
-
-RSP v3.1 では Appendix A 冒頭に「Further, the commitments below do not preclude us from taking cautionary action, such as refraining from training or deploying models, in other circumstances. Mitigating the risks from our models is a top priority for us, and we would strongly consider pausing development and/or deployment to improve the safety profiles of our models even in cases not covered below.」（さらに、以下の commitment は、他の状況下で訓練・展開を見送るといった慎重な行動を取ることを排除しない。我々のモデルが及ぼすリスクの軽減は最優先事項であり、本 commitment の対象外のケースであっても、モデルの安全性プロファイルを改善するため、開発・展開の停止を強く検討する）という文言が追記された。
+RSP v3.1 では「RSPに要求されなくとも、Anthropic は自身の判断で適切と考える状況において AI システムの開発を停止する自由を保持する」という文言が追記された。機械的に読むと自由という表現が恣意的で、RSPが要求しなくてもAIシステムの開発を停止できるとする一方で「自由の行使」としてRSPの停止要求を拒否しても矛盾しない記述となっており、社内機関からのAI開発への介入経路が封鎖された可能性を示唆する。
 
 ## 一次資料
 
