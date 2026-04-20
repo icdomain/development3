@@ -14,6 +14,7 @@
 | RSP v2.0 | 2024-10-15 | [PDF](./docs/anthropic-rsp-v2.0-2024-10-15.pdf) | 2026-04-16 | https://assets.anthropic.com/m/24a47b00f10301cd/original/Anthropic-Responsible-Scaling-Policy-2024-10-15.pdf |
 | RSP v2.1 | 2025-03-31 | [PDF](./docs/anthropic-rsp-v2.1-2025-03-31.pdf) | 2026-04-16 | https://www-cdn.anthropic.com/17310f6d70ae5627f55313ed067afc1a762a4068.pdf |
 | RSP v2.2 | 2025-05-14 | [PDF](./docs/anthropic-rsp-v2.2-2025-05-14.pdf) | 2026-04-16 | https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf |
+| ASL-3 初発動報告 | 2025-05-22 | [HTML](./docs/anthropic-asl3-activation-2025-05-22.html) | 2026-04-20 | https://www.anthropic.com/news/activating-asl3-protections |
 | RSP v3.0 | 2026-02-24 | [PDF](./docs/anthropic-rsp-v3.0-2026-02-24.pdf) | 2026-04-16 | https://www-cdn.anthropic.com/e670587677525f28df69b59e5fb4c22cc5461a17.pdf |
 | RSP v3.1 | 2026-04-02 | [PDF](./docs/anthropic-rsp-v3.1-2026-04-02.pdf) | 2026-04-16 | https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf |
 
