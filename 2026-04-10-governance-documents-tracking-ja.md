@@ -43,17 +43,21 @@ RSP v2.0でASLは、モデルごとに危険度を判定する仕組みから、
 
 RSP v2.1 では v2.0 の CBRN threshold と AI R&D threshold それぞれが内部的に細分化され（CBRN-3 / CBRN-4、AI R&D-4 / AI R&D-5）、ASL-4 を要する閾値が予告された。
 
-## 第3期「リスク評価の放棄」2025年4月15日 〜 2025年5月13日
+## 第3期「Agentの登場とリスク評価の縮退」2025年4月15日 〜 2025年5月13日
 
-AI技術が深刻な危害を及ぼすリスクを持つレベルまで接近したという認識を示す一方でリスク評価機構は更に縮退した。
+AIシステムが「ますますagentic（自律的）になりつつある」と認識される一方で、自律行動に関するリスク追跡は緩和される。
 
 - OpenAI Preparedness Framework v2（2025年4月15日）
 
-Preparedness Framework v2 は「soon have the capability to create meaningful risk of severe harm」（深刻な危害リスクを生む能力を持つに至るまで「もうすぐ」）と認めた上で、「reducing risk generally does not require reducing capability」（リスク低減は一般的に能力低減を必要としない）という原則を明文化した。AIの潜在的なリスクは運用で解決できると決めつける内容であり、運用で解決できないリスクの事前排除・停止という、LLM黎明期から守られてきた前提を放棄する宣言であった。
+Preparedness Framework v2 は、AIシステムが「increasingly agentic」（ますます自律的）になりつつあり、「soon have the capability to create meaningful risk of severe harm」（深刻な危害リスクを生む能力を持つに至るまで「もうすぐ」）であると認めた。
 
-同時にリスクの評価関数からLLMの能力そのものを外し得るという論理構造であり、LLMによって生じた広範な災害、損害、社会変化を、LLMの問題ではなく運用の問題としてフレーミングする余地のあるものであった。
+同時に、旧 Preparedness Framework Beta の Model Autonomy カテゴリが3つに分割された。AI Self-improvement は Tracked Category（正式追跡対象）に昇格した一方、Long-range Autonomy（長期的自律行動）と Autonomous Replication and Adaptation（自律複製・適応）は Research Category（研究段階）に降格された。AIの自律性に伴うリスクを認識しながら、自律行動そのもののリスク追跡が緩和されている。
 
-Preparedness Framework v2 では、これに加えて OpenAI Leadership（CEOまたはその指定代理人）が SAG の参加なしに決定を下せることが制度として明文化された——「SAGには審議を引き延ばす権限はない」と明記される形で。取締役会の安全保安委員会（SSC）が監督役として決定を review でき、必要に応じて取締役会が決定を覆せると規定されてはいるが、SAGが独立した専門家集団として機能しうるのに対し、SSCおよび取締役会の判断基準はOpenAI Leadershipの利害と運用上隣接しており、実質的な歯止めとして機能するかは別問題である。
+加えて「reducing risk generally does not require reducing capability」（リスク低減は一般的に能力低減を必要としない）という原則が明文化された。AIに潜在するリスクは運用で解決できるとする内容であり、運用で解決できないリスクの事前排除・停止という、第1期から続いてきた文脈とは趣の異なる宣言であることは注目に値する。
+
+機械的に読むとリスクの評価関数からLLMの能力そのものを外し得るという論理構造でもあり、LLMによって生じる災害、損害、社会変化を、LLMの問題ではなく運用の問題としてフレーミングする余地を確保する文言のように読める点も注目に値する。
+
+Preparedness Framework v2 では、これに加えて OpenAI Leadership（CEOまたはその指定代理人）が SAG の参加なしに決定を下せることが制度として明文化された——「the SAG does not have the ability to 'filibuster'」（SAGには議事妨害の能力はない）と明記される形で。SAGのメンバーおよび議長は OpenAI Leadership が任命し、任期は1年である。取締役会の安全保安委員会（SSC）が監督役として決定を review でき、必要に応じて取締役会が決定を覆せると規定されてはいるが、SAGが独立した専門家集団として機能しうるのに対し、SSCおよび取締役会の判断基準は OpenAI Leadership の利害と運用上隣接しており、実質的な歯止めとして機能するかは別問題である。
 
 ## 第4期「アンコントローラブル」2025年5月14日 〜 現在
 
