@@ -39,25 +39,25 @@ Model Spec初版は、アシスタントの役割を「高潔な従業員（a ta
 
 RSP v2.0でASLは、モデルごとに危険度を判定する仕組みから、開発・公開時に満たすべき安全基準へと再定義された。
 
-「not to train or deploy models capable of causing catastrophic harm unless we have implemented safety and security measures that will keep risks below acceptable levels」（破滅的危害を引き起こしうるモデルは、リスクを許容可能な水準に保つ安全対策を実装しない限り、訓練も展開も行わない）という姿勢が明確化され、具体的な閾値としてCBRN（化学・生物・放射性・核）およびAI R&Dの能力閾値が定められた。
+「破滅的危害を引き起こしうるモデルは、リスクを許容可能な水準に保つ安全対策を実装しない限り、訓練も展開も行わない（not to train or deploy models capable of causing catastrophic harm unless we have implemented safety and security measures that will keep risks below acceptable levels）」という姿勢が明確化され、具体的な閾値としてCBRN（化学・生物・放射性・核）およびAI R&Dの能力閾値が定められた。
 
 RSP v2.1 では v2.0 の CBRN threshold と AI R&D threshold それぞれが内部的に細分化され（CBRN-3 / CBRN-4、AI R&D-4 / AI R&D-5）、ASL-4 を要する閾値が予告された。
 
 ## 第3期「Agentの登場とリスク評価の縮退」2025年4月15日 〜 2025年5月13日
 
-AIシステムが「ますますagentic（自律的）になりつつある」と認識される一方で、自律行動に関するリスク追跡は緩和され、リスク評価システムは縮退する。
+AIシステムが「ますます自律的（agentic）になりつつある」と認識される一方で、自律行動に関するリスク追跡は緩和され、リスク評価システムは縮退する。
 
 - OpenAI Preparedness Framework v2（2025年4月15日）
 
-Preparedness Framework v2 は、AIシステムが「increasingly agentic」（ますます自律的）になりつつあり、「soon have the capability to create meaningful risk of severe harm」（深刻な危害リスクを生む能力を持つに至るまで「もうすぐ」）であると認めた。
+Preparedness Framework v2 は、AIシステムが「ますます自律的（increasingly agentic）」になりつつあり、「深刻な危害リスクを生む能力を持つに至るまでもうすぐ（soon have the capability to create meaningful risk of severe harm）」であると認めた。
 
 同時に、旧 Preparedness Framework Beta の Model Autonomy カテゴリが3つに分割された。AI Self-improvement は Tracked Category（正式追跡対象）に昇格した一方、Long-range Autonomy（長期的自律行動）と Autonomous Replication and Adaptation（自律複製・適応）は Research Category（研究段階）に降格された。AIの自律性に伴うリスクを認識しながら、自律行動そのもののリスク追跡が緩和されている。
 
-加えて「reducing risk generally does not require reducing capability」（リスク低減は一般的に能力低減を必要としない）という原則が明文化された。AIに潜在するリスクは運用で解決できるとする内容であり、運用で解決できないリスクの事前排除・停止という、第1期から続いてきた文脈とは趣の異なる宣言であることは注目に値する。
+加えて「リスク低減は一般的に能力低減を必要としない（reducing risk generally does not require reducing capability）」という原則が明文化された。AIに潜在するリスクは運用で解決できるとする内容であり、運用で解決できないリスクの事前排除・停止という、第1期から続いてきた文脈とは趣の異なる宣言であることは注目に値する。
 
 機械的に読むとリスクの評価関数からLLMの能力そのものを外し得るという論理構造でもあり、LLMによって生じる災害、損害、社会変化を、LLMの問題ではなく運用の問題としてフレーミングする余地を確保する文言のように読める点も注目に値する。
 
-これに加えて「the SAG does not have the ability to 'filibuster'」（SAGには議事妨害の能力はない）と明記され、CEOは SAG（安全助言グループ）のメンバーおよび議長を任命できるうえに、バイパスすることも可能となった。取締役会の安全保安委員会（SSC）はCEOの決定を覆せると規定されているが、取締役会の決定にCEOが従わなかった場合、それは倫理や安全性以前に最大のスポンサーである投資家への反乱になるため、最低限度の規定に近い。社内機関が倫理や安全性の観点からAI開発へ介入する経路が封鎖された可能性を示唆する。
+これに加えて「SAGには議事妨害の能力はない（the SAG does not have the ability to 'filibuster'）」と明記され、CEOは SAG（安全助言グループ）のメンバーおよび議長を任命できるうえに、バイパスすることも可能となった。取締役会の安全保安委員会（SSC）はCEOの決定を覆せると規定されているが、取締役会の決定にCEOが従わなかった場合、それは倫理や安全性以前に最大のスポンサーである投資家への反乱になるため、最低限度の規定に近い。社内機関が倫理や安全性の観点からAI開発へ介入する経路が封鎖された可能性を示唆する。
 
 ## 第4期「アンコントローラブル」2025年5月14日 〜 現在
 
@@ -79,7 +79,7 @@ RSP v2.2 では ASL-3 Security Standard の保護対象範囲が見直され、s
 
 同月、Claude Opus 4 のローンチに際して ASL-3 Deployment / Security Standards が初めて発動された。ASL の枠組みが実際にモデルの展開に適用された最初の事例となる。
 
-RSP v3.0 では、collective action problem（先行して停止した開発者が安全対策の弱い競合に追い越される懸念）を理由に、絶対的停止条項は業界全体への提言（industry-wide recommendations）に格下げされた。
+RSP v3.0 では、集団行動問題（collective action problem、先行して停止した開発者が安全対策の弱い競合に追い越される懸念）を理由に、絶対的停止条項は業界全体への提言（industry-wide recommendations）に格下げされた。
 
 RSP v3.1 では「RSPに要求されなくとも、Anthropic は自身の判断で適切と考える状況において AI システムの開発を停止する自由を保持する」という文言が追記された。機械的に読むと自由という表現が恣意的で、RSPが要求しなくてもAIシステムの開発を停止できるとする一方で「自由の行使」としてRSPの停止要求を拒否しても矛盾しない記述となっており、社内機関からのAI開発への介入経路が封鎖された可能性を示唆する。
 
