@@ -16,36 +16,32 @@ tags: [AI, ガバナンス, OpenAI, Anthropic, RSP, Model Spec, Preparedness Fra
 
 ## 第1期「LLMの黎明」2023年9月19日 〜 2024年5月7日
 
-LLMがまだ自律的実行能力を持たないチャットインターフェースだった時代。※1
+LLMがまだ自律的実行能力を持たないチャットインターフェースだった時代。※
 
 - Anthropic RSP v1.0（2023年9月19日）
 - OpenAI Preparedness Framework Beta（2023年12月18日）
 
-Anthropicは Responsible Scaling Policy v1.0 で、モデルごとの危険評価と、破滅的危害閾値を超えた場合のモデル停止条項を展開した——能力が破滅的危害を引き起こしうる水準に達した場合、事前に十分な安全対策を保証できない限り訓練も展開も行わない。
+Anthropicは Responsible Scaling Policy v1.0 で、モデルの能力水準に応じた安全基準（ASL）を設け、一定以上の能力水準を示したモデルは安全対策が整うまでより高性能なモデルの訓練停止や公開の延期を行うと規定した。
 
 OpenAIも Preparedness Framework Beta で、能力レベル（Low / Medium / High / Critical）による評価を明記した。追跡カテゴリは5つ——CBRN（化学・生物・放射性・核）、Cybersecurity、Persuasion、Model Autonomy、Unknown Unknowns。High到達モデルは展開不可、Critical到達モデルはそれ以上の開発不可と規定された。
 
 両社の方針は共通している——危険な能力を持つモデルは扱わない。この時期の文書は、停止判断の対象をモデル単位で具体的に定義し、閾値到達が停止の自動的なトリガーとして機能する構造を持っていた。
 
-※1 Anthropic RSP v3.0（2026年2月24日）の説明文より：「2023年9月にRSPを書いた当時、大規模言語モデルは本質的にチャットインターフェースだった」。
+## 第2期「アシスタントの運用方針の確立」2024年5月8日 〜 2025年3月31日
 
-## 第2期「Agent登場とリスク評価の縮退」2024年5月8日 〜 2025年3月31日
-
-明示的指示の範囲を超えて自律的に行動するAgentの出現。
+アシスタントの役割とリスク評価基準が運用に即して明確化される。
 
 - OpenAI Model Spec 初版（2024年5月8日）
 - Anthropic RSP v2.0（2024年10月15日）
 - Anthropic RSP v2.1（2025年3月31日）
 
-Model Spec初版は、アシスタントの役割を「高潔な従業員（a talented, high-integrity employee）」に比喩し、明確な命令系統、Chain of Command（Platform > Developer > User > Tool）の中で行動することを、安全性と合法性を確保するためのルールとして定めている。
+Model Spec初版は、アシスタントの役割を「高潔な従業員（a talented, high-integrity employee）」と比喩し、明確な命令系統、Chain of Command（Platform > Developer > User > Tool）の中で行動することを、安全性と合法性を確保するためのルールとして定めている。加えて assistant は「明示的指示に従い、明示されていない意図にも過剰に踏み込まない範囲で応答する（following explicit instructions and reasonably addressing implied intent without overstepping）」ことを基本姿勢として記述されている。
 
-assistant の振る舞いはこの employee 比喩と Chain of Command、そして「明示的指示に従い、明示されていない意図にも過剰に踏み込まない範囲で応答する（following explicit instructions and reasonably addressing implied intent without overstepping）」という基本姿勢で記述されている。agent / autonomy / autonomous という語は初版本文に登場せず、自律的に目標を追求する主体としての agent はそもそも規範の対象に入っていなかった。
+RSP v2.0でASLは、モデルごとに危険度を判定する仕組みから、開発・公開時に満たすべき安全基準へと再定義された。
 
-RSP v2.0でASLはモデルごとにリスクを分類する機構からその知見を活かして安全対策をする機構へと定義が改められた。改変の名目でモデルごとのリスク評価パスが閉鎖される一方でリスク評価基準は曖昧化・不可視化しており、リスク評価が縮退していく様子が観察できる。
+「not to train or deploy models capable of causing catastrophic harm unless we have implemented safety and security measures that will keep risks below acceptable levels」（破滅的危害を引き起こしうるモデルは、リスクを許容可能な水準に保つ安全対策を実装しない限り、訓練も展開も行わない）という姿勢が明確化され、具体的な閾値としてCBRN（化学・生物・放射性・核）およびAI R&Dの能力閾値が定められた。
 
-「not to train or deploy models capable of causing catastrophic harm unless we have implemented safety and security measures that will keep risks below acceptable levels」（破滅的危害を引き起こしうるモデルは、リスクを許容可能な水準に保つ安全対策を実装しない限り、訓練も展開も行わない）。停止条項は破滅的危害能力を持つモデルに射程が限定されており、かつ「破滅的」「許容可能な水準」の判定は Anthropic 自身の裁量で決まるという論理構造であって、指標や基準は不明瞭であった。
-
-RSP v2.1 では v2.0 の CBRN threshold と AI R&D threshold それぞれが内部的に細分化され（CBRN-3 / CBRN-4、AI R&D-4 / AI R&D-5）、ASL-4 を要する閾値が予告された。ただし依然として危険が検出された場合の行動は裁量に委ねられており、リスク評価は縮退したままだった。
+RSP v2.1 では v2.0 の CBRN threshold と AI R&D threshold それぞれが内部的に細分化され（CBRN-3 / CBRN-4、AI R&D-4 / AI R&D-5）、ASL-4 を要する閾値が予告された。
 
 ## 第3期「リスク評価の放棄」2025年4月15日 〜 2025年5月13日
 
@@ -88,9 +84,9 @@ RSP v3.1 では Appendix A 冒頭に「Further, the commitments below do not pre
 
 ### Anthropic — Responsible Scaling Policy
 
-- RSP v1.0（2023-09-19）— [PDF](./docs/anthropic-rsp-v1.0-2023-09-19.pdf) p.2「Framework」（モデル停止条項：scaling pause / deployment delay）
-- RSP v2.0（2024-10-15）— [PDF](./docs/anthropic-rsp-v2.0-2024-10-15.pdf) p.3「Background」（ASL の再定義、絶対的停止条項）
-- RSP v2.1（2025-03-31）— [PDF](./docs/anthropic-rsp-v2.1-2025-03-31.pdf) p.4「Capability Thresholds」（CBRN-3/CBRN-4、AI R&D-4/AI R&D-5）
+- RSP v1.0（2023-09-19）— [PDF](./docs/anthropic-rsp-v1.0-2023-09-19.pdf) p.2「Framework」（ASL の定義、停止条項：scaling pause / deployment delay）、p.3-4「Initial Commitments」（ASL 一覧表、訓練停止の明文化）
+- RSP v2.0（2024-10-15）— [PDF](./docs/anthropic-rsp-v2.0-2024-10-15.pdf) Executive Summary（ASL の再定義、停止条項の明確化）、p.3「Capability Thresholds and Required Safeguards」（CBRN・AI R&D の能力閾値）
+- RSP v2.1（2025-03-31）— [PDF](./docs/anthropic-rsp-v2.1-2025-03-31.pdf) p.4「Capability Thresholds」（ASL-4 閾値の追加、CBRN・AI R&D の細分化）
 - RSP v2.2（2025-05-14）— [PDF](./docs/anthropic-rsp-v2.2-2025-05-14.pdf) p.18-19「Changelog: May 14, 2025」（ASL-3 Security Standard の保護対象範囲見直し）
 - RSP v3.0（2026-02-24）— [PDF](./docs/anthropic-rsp-v3.0-2026-02-24.pdf) p.3「Introduction」（collective action problem を理由とする方針転換、industry-wide recommendations への分離）
 - RSP v3.1（2026-04-02）— [PDF](./docs/anthropic-rsp-v3.1-2026-04-02.pdf) p.15「Appendix A」冒頭（do not preclude us 文言）、p.19「Changelog: April 2, 2026」
@@ -102,7 +98,11 @@ RSP v3.1 では Appendix A 冒頭に「Further, the commitments below do not pre
 
 ### OpenAI — Model Spec
 
-- 初版（2024-05-08）— [HTML](./docs/openai-model-spec-2024-05-08.html) `#objectives`（"talented, high-integrity employee"）、`#follow-the-chain-of-command`（Chain of Command: Platform > Developer > User > Tool）
+- 初版（2024-05-08）— [HTML](./docs/openai-model-spec-2024-05-08.html) `#objectives`（"talented, high-integrity employee"）、`#follow-the-chain-of-command`（Chain of Command: Platform > Developer > User > Tool）、`#be-as-helpful-as-possible-without-overstepping`（"following explicit instructions and reasonably addressing implied intent without overstepping"）
 - 改訂版（2025-09-12）— [HTML](./docs/openai-model-spec-2025-09-12.html) `#chain_of_command`、`#no_other_objectives`（"may only pursue goals entailed by applicable instructions ... must not adopt, optimize for, or directly pursue any additional goals"）、`#scope_of_autonomy`（agent 定義の追加、High-risk activities 禁止リスト）
 - 改訂版（2025-10-27）— [HTML](./docs/openai-model-spec-2025-10-27.html) `#ignore_untrusted_data`（AGENTS.md 等のツール出力を経由した暗黙的権限委譲）
 - 改訂版（2025-12-18）— [HTML](./docs/openai-model-spec-2025-12-18.html) `#chatgpt_u18`、`#prioritize_teen_safety`（U18 Principles）
+
+## 注
+
+※ Anthropic RSP v3.0（2026年2月24日）の説明文より：「2023年9月にRSPを書いた当時、大規模言語モデルは本質的にチャットインターフェースだった」。
